@@ -1,108 +1,100 @@
-# StaffSync – Modern Human Resource Management System
+# StaffSync — Modern Human Resource Management System
 
-StaffSync is a web-based Human Resource Management System (HRMS) built using the MERN stack. It helps organizations manage employee information and streamline HR operations through a centralized dashboard.
+StaffSync is a web-based Human Resource Management System (HRMS) built with the MERN ecosystem. It brings common HR workflows into one application, including employee records, attendance, leave requests, payroll records, and role-based dashboards.
 
-## 🚀 Features
+> **Project note:** This repository is a customized version of an existing HRMS codebase. Before publishing, make sure you have permission to reuse the original code and comply with its license/attribution requirements. Update this note with the original source/author if applicable. Do not claim third-party code as entirely your own.
 
-- **Dashboard:** View employee statistics and HR activity.
-- **Employee Management:** Manage employee records and information.
-- **Attendance Management:** Track employee attendance.
-- **Leave Management:** Submit, review, and manage leave requests.
-- **Payroll Management:** Organize employee payroll information.
-- **Recruitment:** Manage recruitment-related information.
-- **Reports:** Access HR-related summaries and statistics.
-- **Settings:** Manage application settings.
-- **Database Integration:** Store application data using MongoDB.
-- **Responsive Interface:** Access the application through a modern web interface.
+## Key features
 
-*Note: Features may depend on the current implementation and configuration of the application.*
+- **Role-based access:** Admin, HR, and Employee experiences with protected routes.
+- **Employee management:** Create and maintain employee records.
+- **Attendance:** Punch-in/punch-out and attendance history.
+- **Leave management:** Submit leave requests, view balances/history, and review requests where authorized.
+- **Payroll:** Payroll records and payslip PDF support.
+- **Dashboards:** Role-specific views for HR/admin and employees.
+- **Authentication:** JWT-based authentication and hashed passwords.
 
-## 🛠️ Technology Stack
+Feature availability depends on the current implementation and configured database.
 
-### Frontend
-- React.js
-- TypeScript
-- HTML5
-- CSS3
-- JavaScript
-- Vite
+## Technology stack
 
-### Backend
-- Node.js
-- Express.js
-- REST APIs
+- **Frontend:** React 18, TypeScript, Vite, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB with Mongoose
+- **Authentication/security:** JSON Web Tokens (JWT), bcrypt
+- **Other tools:** Axios, React Router, Zustand, React Hook Form, Zod, PDFKit
 
-### Database
-- MongoDB
-- MongoDB Atlas
-
-### Development Tools
-- Visual Studio Code
-- npm
-- Git and GitHub
-- Postman (for API testing)
-
-## 📁 Project Structure
+## Project structure
 
 ```text
 StaffSync/
 ├── backend/
-│   ├── package.json
-│   └── server.js
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── server.js
+│   └── package.json
 ├── frontend/
 │   ├── src/
-│   ├── public/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── layout/
+│   │   └── pages/
 │   └── package.json
-├── .gitignore
 └── README.md
 ```
 
-*The exact files and folders may vary depending on the current project version.*
-
-## 💻 System Requirements
+## Requirements
 
 - Windows 10/11, macOS, or Linux
-- Node.js and npm
-- MongoDB Atlas account or a local MongoDB installation
-- Visual Studio Code or another code editor
-- A modern web browser
+- Node.js 18 or newer and npm
+- MongoDB Atlas account or a local MongoDB instance
+- Visual Studio Code (recommended)
+- A current browser such as Chrome or Firefox
+- Recommended: 8 GB RAM or more and at least 1 GB of free disk space
 
-## ⚙️ Installation and Setup
+## Run locally
 
-### 1. Clone the repository
+### 1. Clone or download the repository
 
 ```bash
-git clone https://github.com/vidhika22/StaffSync.git
+git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd StaffSync
 ```
 
-### 2. Set up the backend
+### 2. Configure the backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Configure the backend environment variables in a local `.env` file according to the variables required by the application.
-
-Example:
+Create a `backend/.env` file (do not commit this file):
 
 ```env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=replace_with_a_long_random_secret
+JWT_EXPIRE=7d
+NODE_ENV=development
 ```
 
-Use the actual variable names expected by the backend code. Never commit your real database credentials or secrets.
+Use your own MongoDB connection string and credentials. Never publish database passwords, JWT secrets, or other private environment values.
 
-Start the backend using the command configured in your `backend/package.json`. If the project uses `server.js` directly, run:
+Start the backend:
 
 ```bash
-node server.js
+npm run dev
 ```
 
-### 3. Set up the frontend
+The API is expected to run at `http://localhost:5000` unless you configure a different port.
 
-Open a new terminal from the project root and run:
+### 3. Configure and run the frontend
+
+Open a second terminal from the project root:
 
 ```bash
 cd frontend
@@ -110,25 +102,16 @@ npm install
 npm run dev
 ```
 
-Open the local URL displayed by Vite in your terminal, usually `http://localhost:5173`.
+Open the local URL printed by Vite in the terminal.
 
-## 🔐 Security
+## Before publishing to GitHub
 
-- Keep database credentials and secret keys private.
-- Store sensitive configuration in environment variables.
-- Do not upload `.env` files containing real credentials.
-- Use appropriate authentication and authorization controls for protected HR data.
+1. Ensure `.env`, credentials, tokens, and private database URLs are not committed.
+2. Check that the project has a suitable license and attribution for any reused code/assets.
+3. Replace screenshots with screenshots of your own customized application.
+4. Verify both frontend and backend run locally and update this README if commands or features differ.
+5. Do not upload `node_modules`, build outputs, or personal files.
 
-## 🎯 Project Objective
+## Skills demonstrated
 
-The objective of StaffSync is to simplify HR operations by bringing employee information and common human resource workflows into one centralized application.
-
-## 👩‍💻 Author
-
-**Vidhika Laad**
-
-GitHub: [@vidhika22](https://github.com/vidhika22)
-
-## 📄 License
-
-A license has not yet been specified. Add an appropriate license after deciding how you want others to use and distribute this project.
+HTML, CSS, JavaScript/TypeScript, React, Node.js, Express.js, MongoDB, REST APIs, asynchronous JavaScript, JWT authentication, and responsive UI development.
